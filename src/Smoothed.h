@@ -25,8 +25,8 @@ public:
   ~Smoothed(); // Destructor to clean up when class instance killed
   bool begin(byte smoothMode, uint16_t smoothFactor = 10);
   bool add(T newReading);
-  T get();
-  T getLast();
+  T get() const;
+  T getLast() const;
   bool clear();
 };
 
@@ -126,7 +126,7 @@ bool Smoothed<T>::add(T newReading)
 
 // Get the smoothed result
 template <typename T>
-T Smoothed<T>::get()
+T Smoothed<T>::get() const
 {
   switch (smoothMode)
   {
@@ -159,7 +159,7 @@ T Smoothed<T>::get()
 
 // Gets the last result stored
 template <typename T>
-T Smoothed<T>::getLast()
+T Smoothed<T>::getLast() const
 {
   switch (smoothMode)
   {
