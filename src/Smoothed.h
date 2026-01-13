@@ -32,7 +32,7 @@ public:
 
 // Constructor
 template <typename T>
-Smoothed<T>::Smoothed()
+Smoothed<T>::Smoothed() : smoothReading(nullptr)
 { // Constructor
 }
 
