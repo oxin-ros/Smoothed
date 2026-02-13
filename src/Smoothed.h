@@ -19,7 +19,7 @@ private:
   uint16_t smoothReadingsFactor = 10;  // The smoothing factor. In average mode, this is the number of readings to average.
   uint16_t smoothReadingsPosition = 0; // Current position in the array
   uint16_t smoothReadingsNum = 0;      // Number of readings currently being averaged
-  T *smoothReading;                    // Array of readings
+  T *smoothReading = nullptr;                    // Array of readings
 public:
   Smoothed();
   ~Smoothed(); // Destructor to clean up when class instance killed
@@ -32,7 +32,7 @@ public:
 
 // Constructor
 template <typename T>
-Smoothed<T>::Smoothed() : smoothReading(nullptr)
+Smoothed<T>::Smoothed()
 { // Constructor
 }
 
